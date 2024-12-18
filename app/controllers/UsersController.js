@@ -51,7 +51,7 @@ export const getOneProfile = async (req, res) => {
   try {
     let user_id = req.headers['user_id'];
     let data = await UsersModel.findOne({ "_id": user_id })
-    return res.json({ status: "success", "Message": "User ProfileDetails successfully", data: data })
+    return res.json({ status: "success", "Message": "User Profile Details Successfully", data: data })
   }
   catch (err) {
     return res.json({ status: "fail", "Message": err.toString() })
@@ -64,7 +64,7 @@ export const getAllProfiles = async (req, res) => {
   try {
     let user_id = req.headers['user_id'];
     let data = await UsersModel.find();
-    return res.json({ status: "success", "Message": "All User ProfileDetails successfully", data: data })
+    return res.json({ status: "success", "Message": "All User Profile Details Successfully", data: data })
   }
   catch (err) {
     return res.json({ status: "fail", "Message": err.toString() })
@@ -79,7 +79,7 @@ export const updateProfile = async (req, res) => {
     let user_id = req.headers['user_id'];
     await UsersModel.updateOne({ "_id": user_id }, reqBody);
 
-    return res.json({ status: "success", "Message": "User Update successfully" })
+    return res.json({ status: "success", "Message": "User Update Successfully" })
   }
   catch (err) {
     return res.json({ status: "fail", "Message": err.toString() })
@@ -99,7 +99,7 @@ export const deleteUser = async (req, res) => {
 
     //Set Cookies with Response
     res.cookie('token', "", cookieOption);
-    return res.json({ status: "success", "Message": "User delete successfully" })
+    return res.json({ status: "success", "Message": "User Delete Successfully" })
   }
   catch (err) {
     return res.json({ status: "fail", "Message": err.toString() })
