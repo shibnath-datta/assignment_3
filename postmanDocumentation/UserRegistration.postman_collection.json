@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "a73acf8a-ec74-49fa-9696-c358f7aebb8a",
+		"name": "User Registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27535258",
+		"_collection_link": "https://dark-eclipse-618621.postman.co/workspace/MERN~437c9838-962f-4cb2-9aec-cf01da7d7579/collection/27535258-a73acf8a-ec74-49fa-9696-c358f7aebb8a?action=share&source=collection_link&creator=27535258"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "registrationUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Shibnath\",\r\n    \"lastName\": \"Datta\",\r\n    \"NIDNumber\": \"123456789\",\r\n    \"phoneNumber\": \"01710403033\",\r\n    \"password\": \"securePassword123\",\r\n    \"bloodGroup\": \"O+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/registrationUser",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"registrationUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NIDNumber\": \"123456789\",\r\n    \"password\": \"securePassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/loginUser",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"loginUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASEURL}}/getOneProfile",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"getOneProfile"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProfiles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASEURL}}/getAllProfiles",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"getAllProfiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Md. Majed\",\r\n    \"lastName\": \"Rahaman1\",    \r\n    \"phoneNumber\": \"01710403011\",\r\n    \"password\": \"securePassword#\",\r\n    \"bloodGroup\": \"O+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/updateProfile",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BASEURL}}/deleteUser",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEURL",
+			"value": "http://localhost:5050/api",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOSUROdW1iZXIiOiIxMjM0NTY3ODkiLCJ1c2VyX2lkIjoiNjc2MjcxODkyNDc3ZDIyNWJmMjE3OGM4IiwiaWF0IjoxNzM0NTA1MzA4LCJleHAiOjE3MzcwOTczMDh9.kAV_goF6aaVG31nzqul9EfkpUuWIm9p6Ho74spKUXMU",
+			"type": "string"
+		}
+	]
+}
